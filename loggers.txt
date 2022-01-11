@@ -1,0 +1,417 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Jan 11 09:14:01 2022
+
+@author: pc
+"""
+
+'''
+def sum_of_even(lst):
+    print('sum even() started execution')
+    sum=0
+    print('sum was iniatlized to 0')
+    for i in lst:
+        if i%2==0:
+            print('every number in the list was divded by 2 to get even numbers')
+            sum=sum+i
+    return sum
+
+def main():
+    print('main() started execution')
+    lst= list(map(int,input().split()  ))
+    print('input taken from the user')
+    res=sum_of_even(lst)  
+    print('calling the function and collecting the result')
+    print(res)  
+    
+    
+main()    
+
+
+main() started execution
+
+7 8 9 8 7 8 9 8 7 
+input taken from the user
+sum even() started execution
+sum was iniatlized to 0
+every number in the list was divded by 2 to get even numbers
+every number in the list was divded by 2 to get even numbers
+every number in the list was divded by 2 to get even numbers
+every number in the list was divded by 2 to get even numbers
+calling the function and collecting the result
+'''
+
+'''
+#lets add logging info features to the above code
+import logging
+logging.basicConfig(filename='log.txt',level=logging.INFO)
+def sum_of_even(lst):
+    logging.info('sum even() started execution')
+    sum=0
+    logging.info('sum was iniatlized to 0')
+    for i in lst:
+        if i%2==0:
+            logging.info('every number in the list was divded by 2 to get even numbers')
+            sum=sum+i
+    return sum
+
+def main():
+    logging.info('main() started execution')
+    lst= list(map(int,input().split()  ))
+    logging.info('input taken from the user')
+    res=sum_of_even(lst)  
+    logging.info('calling the function and collecting the result')
+    print(res)  
+    
+    
+main()  
+
+
+78 78 7 8 95 
+164
+'''
+
+
+'''
+#example for debug
+
+
+def add(x,y):
+    return x+y
+
+def sub(x,y):
+    return x-y
+
+def mul(x,y):
+    return x*y
+
+def div(x,y):
+    return x/y
+
+def main():
+    a=10
+    b=20
+    print(f'a={a}')
+    print(f'b={b}')
+    res1=add(a, b)
+    print(f'res1={res1}')
+    
+    res2=sub(a, b)
+    print(f'res2={res2}')
+    res3=mul(a,b)
+    print(f'res3={res3}')
+    res4=div(a, b)
+    print(f'res4={res4}')
+    
+    
+main()   
+
+
+a=10
+b=20
+res1=30
+res2=-10
+res3=200
+res4=0.5 
+
+
+'''
+
+
+
+'''
+#lets add looging debug features to the above code
+
+
+import logging
+logging.basicConfig(filename='log.txt',level=logging.DEBUG)
+
+def add(x,y):
+    return x+y
+
+def sub(x,y):
+    return x-y
+
+def mul(x,y):
+    return x*y
+
+def div(x,y):
+    return x/y
+
+def main():
+    a=int(input())
+    b=int(input())
+    logging.debug(f'a={a}')
+    logging.debug(f'b={b}')
+    
+    res1=add(a, b)
+    logging.debug(f'res1={res1}')
+    
+    res2=sub(a, b)
+    logging.debug(f'res2={res2}')
+    res3=mul(a,b)
+    logging.debug(f'res3={res3}')
+    res4=div(a, b)
+    logging.debug(f'res4={res4}')
+    
+    
+main()    
+
+
+89
+
+78
+all the results are stored in the log file
+''' 
+
+'''
+
+#example for WARNING
+
+
+
+def validate(num):
+    if len(num)==10:
+        print('valid mobile number')
+        
+    else:
+        print('invalid mobile number')
+        
+def main():
+    num=input('enter the mobile number:')
+    validate(num)     
+    
+    
+main()    
+
+
+enter the mobile number:7885896897
+valid mobile number
+
+enter the mobile number:78987
+invalid mobile number
+
+'''
+
+
+
+'''
+#lets add warning features
+
+import logging
+logging.basicConfig(filename='log.txt',level=logging.WARNING)
+
+def validate(num):
+    if len(num)==10:
+        print('valid mobile number')
+        
+    else:
+        print('invalid mobile number')
+        logging.warning('invalid mobile number')
+        
+def main():
+    num=input('enter the mobile number:')
+    validate(num)     
+    
+    
+main()  
+
+
+enter the mobile number:787
+invalid mobile number  
+
+'''
+
+'''
+#example for error level
+
+def div():
+    num=int(input('enter the numerator:'))
+    den=int(input('enter the denominator:'))
+    res=num/den
+    print(res)
+    
+    
+def main():
+    div()
+
+main()    
+
+
+enter the numerator:74
+
+enter the denominator:45
+1.6444444444444444
+
+
+enter the numerator:100
+
+enter the denominator:0
+Traceback (most recent call last):
+
+  File "C:\python\loggr.py", line 238, in <module>
+    main()
+
+  File "C:\python\loggr.py", line 236, in main
+    div()
+
+  File "C:\python\loggr.py", line 231, in div
+    res=num/den
+
+ZeroDivisionError: division by zero
+
+
+
+
+'''
+
+'''
+#lets add error features
+import logging
+logging.basicConfig(filename='log.txt',level=logging.ERROR)
+                    
+
+
+def div():
+    try:
+        num=int(input('enter the numerator:'))
+        den=int(input('enter the denominator:'))
+        res=num/den
+        print(res)
+    except:
+        logging.error('exception occured')
+    
+def main():
+    div()
+
+main()
+
+
+enter the numerator:78
+
+enter the denominator:0
+'''
+
+
+'''
+import logging
+logging.basicConfig(filename='log.txt',level=logging.ERROR)
+                    
+
+
+def div():
+    try:
+        num=int(input('enter the numerator:'))
+        den=int(input('enter the denominator:'))
+        res=num/den
+        print(res)
+    except:
+        logging.error('exception occured',exc_info=True)
+    
+def main():
+    div()
+
+main()
+
+
+'''
+
+
+
+'''
+#if i would like to overwrite the log filee  
+
+
+
+import logging
+logging.basicConfig(filename='log.txt',level=logging.ERROR,filemode='w')
+                    
+
+
+def div():
+    try:
+        num=int(input('enter the numerator:'))
+        den=int(input('enter the denominator:'))
+        res=num/den
+        print(res)
+    except:
+        logging.error('exception occured',exc_info=True)
+    
+def main():
+    div()
+
+main()
+  
+
+
+enter the numerator:78
+
+enter the denominator:0
+
+
+'''
+
+
+
+
+## here all the additional information like,information,debug ,warnings.error are stored in separate log file##
+
+
+INFO:root:input taken from thee usr
+INFO:root:input taken from thee usr
+INFO:root:main() started execution
+INFO:root:main() started execution
+INFO:root:input taken from the user
+INFO:root:sum even() started execution
+INFO:root:sum was iniatlized to 0
+INFO:root:every number in the list was divded by 2 to get even numbers
+INFO:root:every number in the list was divded by 2 to get even numbers
+INFO:root:every number in the list was divded by 2 to get even numbers
+INFO:root:calling the function and collecting the result
+DEBUG:root:a=10
+DEBUG:root:b=20
+DEBUG:root:res1=30
+DEBUG:root:res2=-10
+DEBUG:root:res3=200
+DEBUG:root:res4=0.5
+DEBUG:root:a=10
+DEBUG:root:b=20
+DEBUG:root:res1=30
+DEBUG:root:res2=-10
+DEBUG:root:res3=200
+DEBUG:root:res4=0.5
+DEBUG:root:a=8
+DEBUG:root:b=8
+DEBUG:root:res1=16
+DEBUG:root:res2=0
+DEBUG:root:res3=64
+DEBUG:root:res4=1.0
+DEBUG:root:a=8
+DEBUG:root:b=96
+DEBUG:root:res1=104
+DEBUG:root:res2=-88
+DEBUG:root:res3=768
+DEBUG:root:res4=0.08333333333333333
+DEBUG:root:a=89
+DEBUG:root:b=78
+DEBUG:root:res1=167
+DEBUG:root:res2=11
+DEBUG:root:res3=6942
+DEBUG:root:res4=1.141025641025641
+INFO:root:main() started execution
+INFO:root:input taken from the user
+INFO:root:sum even() started execution
+INFO:root:sum was iniatlized to 0
+INFO:root:every number in the list was divded by 2 to get even numbers
+INFO:root:every number in the list was divded by 2 to get even numbers
+INFO:root:every number in the list was divded by 2 to get even numbers
+INFO:root:calling the function and collecting the result
+WARNING:root:invalid mobile number
+WARNING:root:invalid mobile number
+WARNING:root:invalid mobile number
+ERROR:root:exception occured
+ERROR:root:exception occured
+Traceback (most recent call last):
+  File "C:\python\loggr.py", line 303, in div
+    res=num/den
+ZeroDivisionError: division by zero
